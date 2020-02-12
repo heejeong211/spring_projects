@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> <!-- 컨테이너 설정 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup> <!-- servlet은 여러개 만들 수 있음. 그중에서 제일 먼저 실행시킬 곳에 작은 숫자를 넣음. -->
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name><!-- context path 뒤에 오는 애들을 *.do 처럼 처리하겠다는 의미 -->
+		<url-pattern>/</url-pattern> <!-- servlet별로 해당 url을 전해줄 수 있다. '/'는 루트임. -->
+	</servlet-mapping>
+	
+	<filter> <!-- 한글설정 filter로 설정함 -->
+	    <filter-name>encodingFilter</filter-name> 
+	    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+	    <init-param> 
+	       <param-name>encoding</param-name> 
+	       <param-value>UTF-8</param-value> 
+	    </init-param> 
+	    <init-param> 
+	       <param-name>forceEncoding</param-name> 
+	       <param-value>true</param-value> 
+	    </init-param> 
+	 </filter> 
+	 <filter-mapping> 
+	    <filter-name>encodingFilter</filter-name> 
+	    <url-pattern>/*</url-pattern> 
+	 </filter-mapping>   
+
+</web-app>

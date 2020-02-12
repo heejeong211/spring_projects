@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="grade" class="com.javalec.ex.Grade">
+		<property name="a">
+			<value>90</value>
+		</property>
+		<property name="b">
+			<value>80</value>
+		</property>
+		<property name="c">
+			<value>70</value>
+		</property>
+		<property name="d">
+			<value>60</value>
+		</property>
+	</bean>
+	<bean id="gradeInfo" class="com.javalec.ex.GradeInfo">
+		<property name="grade">
+			<ref bean="grade"/>
+		</property>
+		<property name="kor">
+			<value>87</value>
+		</property>
+		<property name="eng">
+			<value>55</value>
+		</property>
+		<property name="math">
+			<value>76</value>
+		</property>
+	</bean>
+	
+</beans>

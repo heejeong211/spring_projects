@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- scope="prototype" 이렇게하면 각 객체마다 주소값을 달리 가짐 -->
+	<bean id="student" class="com.javalec.ex.Student4" scope="singleton"> <!-- singleton : 컨테이너한테 한개의 주소값만 갖게 하는 것.(객체를 유일무일하게 만드는 것) 없어도 디폴트가 싱글톤임. 메모리 아끼기 위해 싱글톤 사용 -->
+		<property name="age" value="80"></property>
+		<property name="name" value="홍길순"></property>
+	</bean>
+</beans>
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- class에 Pencil4B, Pencil6B 를 집어넣음 -->
+	<bean id="pencil" class="com.javalec.ex.Pencil6BWithEraser"></bean> <!-- Pencil6BWithEraser pencil = new Pencil6BWithEraser(); -->
+	
+</beans>
+
+<!-- 스프링의 장점  -->
+<!-- 소스코드를 건드리지 않음. 설정파일(IoC컨테이너)을 건드려서 수정함.  -->
+<!-- 자바파일에 수정없이 설정 파일만으로 부품을 조립하고 있다. -->

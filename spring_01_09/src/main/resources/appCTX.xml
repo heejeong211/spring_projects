@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- id가 변수명, class가 Calculation calculator = new com.javalec.ex.Calculation();, bean은 new 이다. 객체생성하는 애다. -->
+	<!-- id는 개발자가 직접 지정 MyCalculation의 객체이름과 같아야 한다, class는 패키지명과 클래스명 -->
+	<bean id="calculator" class="com.javalec.ex.Calculation"></bean>
+	
+	<bean id="myCalculator" class="com.javalec.ex.MyCalculation">
+		<property name="calculator"> <!-- property는 set함수이다. myCalculator.setCalculator(calculator) -->
+			<ref bean="calculator"/> <!-- ref는 주소, bean의 id인 calculator이다. -->
+		</property>
+		
+		<property name="firstNum" value="10"></property> <!-- myCalculator.setFirstNum(10) -->
+		<property name="secondNum" value="2"></property> <!-- myCalculator.setSecondNum(2) -->
+	</bean>
+	
+</beans>
