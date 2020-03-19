@@ -8,17 +8,17 @@ import org.apache.ibatis.annotations.Select;
 
 import edu.bit.board.vo.BoardVO;
 
-//@ParamÀ» ÇØ ÁÖ´Â ÀÌÀ¯
-//mybatis¿¡¼­ µ¥ÀÌÅÍ ºÒ·¯¿Ã ¶§ ¼ø¼­´ë·Î ºÒ·¯¿ÀÁö ¾ÊÀ½. ±×·¡¼­ @Param À» ½áÁà¾ß µÇ´Â °ÍÀÓ.
+//@Paramì„ í•´ ì£¼ëŠ” ì´ìœ 
+//mybatisì—ì„œ ë°ì´í„° ë¶ˆëŸ¬ì˜¬ ë•Œ ìˆœì„œëŒ€ë¡œ ë¶ˆëŸ¬ì˜¤ì§€ ì•ŠìŒ. ê·¸ë˜ì„œ @Param ì„ ì¨ì¤˜ì•¼ ë˜ëŠ” ê²ƒì„.
 
 public interface BoardService {
 	
 	public List<BoardVO> selectBoardList();
 	
 //	public void insertBoard(@Param("boardVO") BoardVO boardVO);
-	public void insertBoard(@Param ("bName") String bName, @Param ("bTitle") String bTitle,@Param ("bContent") String bContent);
+	public void insertBoard(@Param ("bName") String bName, @Param ("bTitle") String bTitle, @Param ("bContent") String bContent);
 	
-//	@Select("select * from mvc_board where bId = #{bId}") // ÇÏ³ª¹Û¿¡ ¾È¸¸µé ¶§
+//	@Select("select * from mvc_board where bId = #{bId}") // í•˜ë‚˜ë°–ì— ì•ˆë§Œë“¤ ë•Œ
 //	public BoardVO contentBoard(int bId);
 	public BoardVO contentBoard(@Param ("bId") String getbId);
 
